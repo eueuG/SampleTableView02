@@ -15,6 +15,12 @@
 		0C15C95026268B8000BAB1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C15C94E26268B8000BAB1AA /* LaunchScreen.storyboard */; };
 		0C15C95B26268B8100BAB1AA /* SampleTableView02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C95A26268B8100BAB1AA /* SampleTableView02Tests.swift */; };
 		0C15C96626268B8100BAB1AA /* SampleTableView02UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C96526268B8100BAB1AA /* SampleTableView02UITests.swift */; };
+		0C15C980262E773600BAB1AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C97F262E773600BAB1AA /* HomeViewController.swift */; };
+		0C15C988262E794500BAB1AA /* HomeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C987262E794500BAB1AA /* HomeTaskCell.swift */; };
+		0C15C99A262E991300BAB1AA /* HomeTaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C999262E991300BAB1AA /* HomeTaskData.swift */; };
+		0C15C9A2262F07DC00BAB1AA /* SecTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C9A1262F07DB00BAB1AA /* SecTaskCell.swift */; };
+		0C15C9A72633B5A300BAB1AA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C9A62633B5A200BAB1AA /* SecondViewController.swift */; };
+		0C15C9AF2635247800BAB1AA /* SecTaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C15C9AE2635247800BAB1AA /* SecTaskData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		0C15C96126268B8100BAB1AA /* SampleTableView02UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleTableView02UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C15C96526268B8100BAB1AA /* SampleTableView02UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableView02UITests.swift; sourceTree = "<group>"; };
 		0C15C96726268B8100BAB1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C15C97F262E773600BAB1AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0C15C987262E794500BAB1AA /* HomeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTaskCell.swift; sourceTree = "<group>"; };
+		0C15C999262E991300BAB1AA /* HomeTaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTaskData.swift; sourceTree = "<group>"; };
+		0C15C9A1262F07DB00BAB1AA /* SecTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecTaskCell.swift; sourceTree = "<group>"; };
+		0C15C9A62633B5A200BAB1AA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0C15C9AE2635247800BAB1AA /* SecTaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecTaskData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,13 @@
 		0C15C94226268B7D00BAB1AA /* SampleTableView02 */ = {
 			isa = PBXGroup;
 			children = (
-				0C15C94326268B7D00BAB1AA /* AppDelegate.swift */,
-				0C15C94526268B7D00BAB1AA /* SceneDelegate.swift */,
+				0C15C998262E98BA00BAB1AA /* Model */,
+				0C15C978262E761F00BAB1AA /* SupportFiles */,
+				0C15C977262E75FF00BAB1AA /* UI */,
+				0C15C97F262E773600BAB1AA /* HomeViewController.swift */,
+				0C15C9A62633B5A200BAB1AA /* SecondViewController.swift */,
 				0C15C94726268B7D00BAB1AA /* ViewController.swift */,
-				0C15C94926268B7D00BAB1AA /* Main.storyboard */,
 				0C15C94C26268B8000BAB1AA /* Assets.xcassets */,
-				0C15C94E26268B8000BAB1AA /* LaunchScreen.storyboard */,
-				0C15C95126268B8000BAB1AA /* Info.plist */,
 			);
 			path = SampleTableView02;
 			sourceTree = "<group>";
@@ -126,6 +138,36 @@
 				0C15C96726268B8100BAB1AA /* Info.plist */,
 			);
 			path = SampleTableView02UITests;
+			sourceTree = "<group>";
+		};
+		0C15C977262E75FF00BAB1AA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0C15C94926268B7D00BAB1AA /* Main.storyboard */,
+				0C15C94E26268B8000BAB1AA /* LaunchScreen.storyboard */,
+				0C15C987262E794500BAB1AA /* HomeTaskCell.swift */,
+				0C15C9A1262F07DB00BAB1AA /* SecTaskCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0C15C978262E761F00BAB1AA /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0C15C94326268B7D00BAB1AA /* AppDelegate.swift */,
+				0C15C94526268B7D00BAB1AA /* SceneDelegate.swift */,
+				0C15C95126268B8000BAB1AA /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		0C15C998262E98BA00BAB1AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C15C999262E991300BAB1AA /* HomeTaskData.swift */,
+				0C15C9AE2635247800BAB1AA /* SecTaskData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C15C9A72633B5A300BAB1AA /* SecondViewController.swift in Sources */,
 				0C15C94826268B7D00BAB1AA /* ViewController.swift in Sources */,
+				0C15C988262E794500BAB1AA /* HomeTaskCell.swift in Sources */,
+				0C15C99A262E991300BAB1AA /* HomeTaskData.swift in Sources */,
 				0C15C94426268B7D00BAB1AA /* AppDelegate.swift in Sources */,
+				0C15C9A2262F07DC00BAB1AA /* SecTaskCell.swift in Sources */,
 				0C15C94626268B7D00BAB1AA /* SceneDelegate.swift in Sources */,
+				0C15C9AF2635247800BAB1AA /* SecTaskData.swift in Sources */,
+				0C15C980262E773600BAB1AA /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +486,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RUT2J33C6;
-				INFOPLIST_FILE = SampleTableView02/Info.plist;
+				INFOPLIST_FILE = SampleTableView02/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RUT2J33C6;
-				INFOPLIST_FILE = SampleTableView02/Info.plist;
+				INFOPLIST_FILE = SampleTableView02/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
