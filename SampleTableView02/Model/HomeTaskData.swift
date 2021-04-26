@@ -14,4 +14,7 @@ struct HomeTaskData {
     let time: String
     var count: Int
     
+    //ここに遷移先でTableになる配列を作っておくのが良いかも
+    var secCellDatas: [SecTaskCell] = []
+    
 }

@@ -14,9 +14,8 @@ class SecondViewController: UITableViewController {
    // private func setUpNavigationItem() {
     //self.navigationItem.title = "Title"
     //}
-    var secTaskDatas: [SecTaskData] = [
-        SecTaskData(id: 0, time: "1:50:09", data: "2021/04/07", memo: "aiaia")
-    ]
+    var giveData: Int = 0
+    var secTaskList: [SecTaskData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,7 @@ class SecondViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return secTaskList.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,7 +36,7 @@ class SecondViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SecTaskCell = tableView.dequeueReusableCell(withIdentifier: "SecTaskCell", for: indexPath) as! SecTaskCell
         
-        cell.secTitleLabel.text = "Label"
+        cell.secTitleLabel.text = secTaskList[indexPath.row].title
         //cell.secTimeLabel.text = "1:54:50"
         
         return cell

@@ -12,13 +12,44 @@ class HomeViewController: UITableViewController, UITextFieldDelegate {
     
 
     
-    
-    var homeTaskDatas: [HomeTaskData] = [
-        HomeTaskData(id: 0, title: "Working", time: , count: 0)]
-    
+    var receiveData: Int = 0
+    var homeTaskDatas: [HomeTaskData] = [] //これはTableっていう名前がいいかも
     
     
     
+    @IBAction func homeAddButtonTapped(_ sender: Any) {
+         var alertTextField: UITextField?
+
+         let alert = UIAlertController(
+             title: "Edit Name",
+             message: "Enter new name",
+             preferredStyle: UIAlertController.Style.alert)
+         alert.addTextField(
+             configurationHandler: {(textField: UITextField!) in
+                 alertTextField = textField
+                textField.text = self.homeTaskDatas[0].title
+                 // textField.placeholder = "Mike"
+                 // textField.isSecureTextEntry = true
+         })
+         alert.addAction(
+             UIAlertAction(
+                 title: "Cancel",
+                 style: UIAlertAction.Style.cancel,
+                 handler: nil))
+         alert.addAction(
+             UIAlertAction(
+                 title: "OK",
+                 style: UIAlertAction.Style.default) { _ in
+                 if let text = alertTextField?.text {
+                    self.homeTaskDatas.append(HomeTaskData.title.text)
+                 }
+             }
+         )
+
+         self.present(alert, animated: true, completion: nil)
+     }
+
+ 
     
 //    @IBAction func alert(_ sender: Any) {
 //        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
@@ -64,7 +95,7 @@ class HomeViewController: UITableViewController, UITextFieldDelegate {
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return homeTaskDatas.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -78,19 +109,24 @@ class HomeViewController: UITableViewController, UITextFieldDelegate {
         let cell: HomeTaskCell = tableView.dequeueReusableCell(withIdentifier: "HomeTaskCell", for: indexPath) as! HomeTaskCell
         cell.accessoryType = .disclosureIndicator
         //cell.homeCellLabel.text = "Label"
+        
+        cell.homeCellLabel.text = homeTaskDatas[indexPath.row].title
+        
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Segueを使った画面遷移を行う関数
         performSegue(withIdentifier: "FirstSegue", sender: nil)
+        receiveData = indexPath.row
     }
     
-    // 遷移先のViewControllerにデータを渡す関数
+    // 遷移先のViewControllerにデータを渡す関数。ここで遷移先のTable配列に値を渡せばいいのかな
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FirstSegue" {
             let vc = segue.destination as! SecondViewController
-            //vc.receiveData = giveData
+            vc.giveData = receiveData
         }
     }
     
