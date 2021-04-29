@@ -9,12 +9,14 @@ import Foundation
 import UIKit
 
 struct HomeTaskData {
-    let id: Int
+    //let id: Int
     var title: String
-    let time: String
-    var count: Int
+    //let time: String
+    //var count: Int
     
     //ここに遷移先でTableになる配列を作っておくのが良いかも
-    var secCellDatas: [SecTaskCell] = []
+    //nilは許容したい。親のセルを生成したときはこのセルを手入力するまで空にしたい。
+    var secCellDatas: [SecTaskData]? = []
+    
     
 }

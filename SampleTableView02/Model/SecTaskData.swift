@@ -10,9 +10,9 @@ import UIKit
 
 //id, time, date, memo=string
 struct SecTaskData {
-    let id: Int
-    var time: String
+   // let id: Int
+   // var time: String
     var title: String
-    let data: String
-    var memo: String
+   // let data: String
+    //var memo: String
 }

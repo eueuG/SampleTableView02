@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
+
 class HomeViewController: UITableViewController, UITextFieldDelegate {
     
 
     
     var receiveData: Int = 0
-    var homeTaskDatas: [HomeTaskData] = [] //これはTableっていう名前がいいかも
+    var homeTaskDatas: [HomeTaskData] = [HomeTaskData(title: "title", secCellDatas: nil)]
+
+    //これはTableっていう名前がいいかも
+    
     
     
     
@@ -24,25 +28,30 @@ class HomeViewController: UITableViewController, UITextFieldDelegate {
              title: "Edit Name",
              message: "Enter new name",
              preferredStyle: UIAlertController.Style.alert)
+        
          alert.addTextField(
              configurationHandler: {(textField: UITextField!) in
                  alertTextField = textField
-                textField.text = self.homeTaskDatas[0].title
+                //textField.text = self.homeTaskDatas[0].title
                  // textField.placeholder = "Mike"
                  // textField.isSecureTextEntry = true
          })
+        //ボタン追加してます
          alert.addAction(
              UIAlertAction(
                  title: "Cancel",
                  style: UIAlertAction.Style.cancel,
                  handler: nil))
+        //ボタン押したときにtextFieldが埋まってたらその値をタスクに追加。
          alert.addAction(
              UIAlertAction(
                  title: "OK",
                  style: UIAlertAction.Style.default) { _ in
                  if let text = alertTextField?.text {
-                    self.homeTaskDatas.append(HomeTaskData.title.text)
+                    self.homeTaskDatas.append(HomeTaskData(title: text, secCellDatas: nil))
                  }
+                print(self.homeTaskDatas)
+                self.tableView.reloadData()
              }
          )
 
